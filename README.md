@@ -5,8 +5,8 @@ Giocoso (giochi pediatrici per la comunicazione e la socializzazione) è una sui
 Comprende le seguenti sette applicazioni progettate e sviluppate dal Politecnico di Milano, tutte rilasciate open source con licenza *Apache License, Version 2.0*
 - [Chef Per Un Giorno](https://github.com/polimi-giocoso/chef)
 - [Super App](https://github.com/polimi-giocoso/super)
-- [Lego Digital Sonoro 1](https://github.com/polimi-giocoso/lego1)
-- [Lego Digital Sonoro 2](https://github.com/polimi-giocoso/lego2)
+- [Incastri Sonori 1](https://github.com/polimi-giocoso/incastri1)
+- [Incastri Sonori 2](https://github.com/polimi-giocoso/incastri2)
 - [Trova l'Intruso 1](https://github.com/polimi-giocoso/intruso1)
 - [Trova l'Intruso 2](https://github.com/polimi-giocoso/intruso2)
 - [Hi Captain](https://github.com/polimi-giocoso/captain)
