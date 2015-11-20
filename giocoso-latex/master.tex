@@ -1,0 +1,104 @@
+\documentclass[12pt,a4paper]{report} % ,twoside,openright
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{url}
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\makeatother
+\usepackage{etoc}
+% change date format
+\usepackage[ddmmyyyy]{datetime}
+% for correct names
+\usepackage[italian]{babel}
+
+\linespread{1.5}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{light-gray}{gray}{0.95}
+\definecolor{yellow}{RGB}{255, 251, 140}
+
+% defining single line code blocks with monospace font and light-gray backgound (StackOverflow style)
+\newcommand{\code}[1]{\nolinkurl{#1}}
+% note command
+\newcommand{\todo}[1]{\colorbox{yellow}{\textbf{\#TODO} #1}}
+% command for title pages
+\newcommand{\doctitle}[2]{
+\vspace*{3cm}
+\begin{flushright}
+\Large \textit{Documentazione a cura di\\#1}\\
+\large (\texttt{#2})
+\end{flushright}
+\newpage
+}
+
+% For Screenshots
+\newcommand{\screenshot}[2]{
+\begin{figure}[h!]
+\centering{
+\includegraphics[width=\textwidth]{screenshots/#1.png}}
+\caption{#2}
+\label{fig:#1}
+\end{figure}
+}
+
+% commands for local toc
+\newcommand{\localtoc}{
+    \pagestyle{empty}
+    \localtableofcontents
+    \clearpage
+    \pagestyle{main}
+}
+
+% footer and header
+\usepackage{titleps}
+
+\newpagestyle{main}[\normalsize]{
+    \setheadrule{0.4pt}
+    \sethead{\chaptertitle}{}{\sectiontitle}
+    \setfootrule{0.4pt}
+    \setfoot{
+        Progetto Giocoso 2015 - Documentazione delle Applicazioni.
+    }
+    {}{\thepage}
+}
+\pagestyle{main}
+
+% BEGIN DOCUMENT
+
+\begin{document}
+\input{title}
+
+\setcounter{tocdepth}{0}
+\tableofcontents
+\setcounter{tocdepth}{2}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+
+\chapter{Chef per un Giorno}
+\input{chefperungiorno/master}
+
+\chapter{Incastri Sonori 1}
+\input{legodigitalsonoro1/master}
+
+\chapter{Incastri Sonori 2}
+\input{legodigitalsonoro2/master}
+
+\chapter{Trova l'Intruso 1}
+\input{trovaintruso1/master}
+
+\chapter{Trova l'Intruso 2}
+\input{trovaintruso2/master}
+
+\chapter{SuperApp}
+\input{superapp/master}
+
+\end{document}

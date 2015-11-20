@@ -1,0 +1,35 @@
+% dir path
+\renewcommand*{\mypath}{legodigitalsonoro2}%
+
+\doctitle{Giacomo Bresciani}{giacomo.bresciani@polimi.it}
+\localtoc
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true
+  tabsize=3
+}
+
+
+\graphicspath{ {\mypath/images/} }
+
+\section{Manuale Sviluppatore}
+\input{\mypath/chapters/01.introduzione}
+\input{\mypath/chapters/02.database}
+\input{\mypath/chapters/03.logica}
+\input{\mypath/chapters/04.user_interface}
+\input{\mypath/chapters/05.librerie}
+
+\section{Manuale Utente}
+\input{\mypath/chapters/06.utente}

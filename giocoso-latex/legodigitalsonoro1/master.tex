@@ -1,0 +1,100 @@
+\renewcommand*{\mypath}{legodigitalsonoro1}%
+\graphicspath{{\mypath/images/}}
+
+\doctitle{Chiara Calabrese}{chiara.calabrese@mail.polimi.it}
+\localtoc
+
+\newcommand{\includefigure}[2]{
+\begin{figure}[h!]
+\centering{
+\includegraphics[width=\textwidth]{#1.png}}
+\caption{#2}
+\label{fig:#1}
+\end{figure}
+}
+
+\section{Manuale Utente}
+
+L'applicazione Incastri Sonori è una applicazione mobile progettata per la compatibilità con Android. L'applicazione è un semplice gioco dedicato ai bambini in età prescolare il cui intento è quello di insegnare loro a comporre delle parole bisillabe.
+
+Al giocatore vengono presentate 4 o 6 tessere rappresentanti una sillaba di una determinata parola. Ogni tessera è associata ad una seconda tessera con cui andrà a formare una parola bisillaba. Ad ogni parola è associata una rappresentazione, quindi per esempio alla parola ``cane'' sarà associata la figura di un cane, alla parola ``mora'' una mora e così via. Ogni immagine è divisa a metà in due tessere rappresentanti le due sillabe componenti la parola. Il gioco consiste nel selezionare la coppia di tessere nella successione corretta per formare una parola di senso compiuto. Una volta accoppiate tutte le tessere della schermata il gioco sarà completato. L'applicazione raccoglie dati sulla velocità con cui il bambino compone una determinata parola e li invia via mail ad un indirizzo prescelto.
+
+L'applicazione è composta da poche semplici schermate. Nella prima schermata (figura \ref{fig:main}) è possibile scegliere di iniziare una partita in modalità singola o in modalità sfida, se si vuole giocare con un altro giocatore. Da questa schermata è possibile accedere ad un'altra detta ``di configurazione'' (figura \ref{fig:impostazioni})che permette di modificare le impostazioni di gioco selezionando il numero di parole componibili in una schermata o turno, 2 o 3, il numero di turni di gioco, da 1 a 10, e l'indirizzo mail a cui inviare i risultati alla fine della partita. Le impostazioni predefinite per il numero di turni è 8, per il numero di parole per turno è 3 e per la mail è il campo vuoto.
+
+\includefigure{main}{Schermata iniziale}
+
+\includefigure{impostazioni}{Schermata impostazioni}
+
+Selezionando la modalità gioco singolo, l'utente accede direttamente alla schermata di gioco (figura \ref{fig:gioco}). Questa schermata è divisa in due settori principali ovvero una sezione a sinistra, che presenta 3 tessere vuote, e una sezione a destra, con le tessere delle parole da comporre. Per comporre le parole l'utente selezionerà le sillabe cliccando sopra ciascuna tessera. Quando si seleziona una tessera si può ascoltare il suono della sillaba associata. Le parole devono essere composte nell'ordine corretto, prima-sillaba seconda-si llaba. Se l'utente seleziona per prima una prima sillaba questa comincia a lampeggiare, indicando univocamente quale parola deve essere completata. Se l'utente seleziona correttamente la seconda sillaba la parola è completata e si sposta nella parte sinistra dello schermo, altrimenti la prima sillaba continua a lampeggiare. Ogni volta che una tessera viene selezionata viene pronunciata la sillaba corrispondente.
+
+Al momento in cui la parola viene completata l'applicazione pronuncia la parola completa. L'utente la può riascoltare selezionando la tessera nel campo risultati, oppure può selezionare la bandiera inglese accanto alla stessa tessera che permette di ascoltare la stessa parola in inglese.
+
+Quando il giocatore completa tutte le parole, ovvero quando la parte sinistra dello schermo è completa, sulla parte destra comparirà un bottone che permette di passare al turno successivo o, se le parole sono state tutte completate, permette di terminare la partita. Una volta terminata la partita l'applicazione riporta l'utente alla schermata iniziale.
+
+\includefigure{gioco}{Schermata di gioco}
+
+Se viene selezionata la modalità di gioco ``sfida'' si accede invece ad una schermata di impostazione della connessione (figura \ref{fig:connectionsetup}). La connessione con altri giocatori avviene tramite bluetooth.
+
+Accedendo alla schermata di impostazioni della partita doppia (figura \ref{fig:schermataDeviceList}) verrà richiesto all'utente il permesso di rendersi visibile agli altri dispositivi per 5 minuti. I dispositivi con cui possiamo interagire si dividono in due categorie: la prima è formata dai dispositivi con cui ci siamo connessi già in passato, la seconda da quei dispositivi con cui non abbiamo mai interagito. Dando il permesso alla richiesta del sistema, ci si rende visibili a quei dispositivi con cui non abbiamo mai parlato; è quindi una operazione fondamenta le quando dobbiamo instaurare una connessione con un giocatore per la prima volta.
+
+Perchè due giocatori possano giocare insieme occorre che entrambi selezionino la modalità di gioco sfida. Una volta che entrambi hanno raggiunto la schermata di impostazioni della partita doppia uno dei due invita il secondo a giocare. Cliccando il bottone centrale si ha accesso alla lista di dispositivi riconosci uti. Se la lista è vuota o l'altro giocatore non compare nella lista basterà cliccare sul bottone ``scan'' per dare avvio alla ricerca di nuovi dispositivi. Una volta che l'altro giocatore compare nella lista di possibili sfidanti, chi imposta la partita lo invita a giocare. A questo punto la partita doppia ha inizio, l'applicazione mostrerà la schermata di gioco ad entrambi i giocatori e l'invitato potrà eseguire la prima mossa. I turni sono alternati e indicati da un semaforo in basso a destra. La composizione delle parole è collaborativa, quindi il primo giocatore selezionerà la prima sillaba e il secondo dovrà completare la parola selezionat a e successivamente scegliere la prima sillaba della seconda parola. Il gioco continua fino all'esaurimento delle parole sullo schermo.
+
+\includefigure{connectionsetup}{Schermata connection setup}
+
+\includefigure{schermataDeviceList}{Schermata impostazione della partita doppia: lista dei giocatori disponibili}
+
+L'applicazione Incastri Sonori permette di raccogliere i dati sulla partita appena giocata. Ogni volta che viene completata una partita in modalità giocatore singolo, viene inviata una mail all'indirizzo specificato nelle impostazioni contenente il numero di parole totale, tutte le parole completate e, per ogni parola, il tempo di completamento.
+
+\section{Manuale Sviluppatore}
+
+L'applicazione Incastri Sonori è stata progettata per girare su Android 4.2. I dati sono incorporati all'interno dell'applicazione, quindi non occorre scaricare da remoto alcuna informazione. L'unico contatto con un sistema remoto avviene al momento della inizializzazione della partita in modalità ``sfida''
+
+L'applicazione è costituita da 3 activity principali che sono la \code{MainActivity}, che controlla la schermata inziale e permette all'utente di scegliere fra partita singola, multipla o modifica delle impostazioni, la \code{MatchActivity}, che controlla la schermata di gioco, e la \code{ConnectionSetupActivity}, che gestisce la schermata di setup della partita in modalità doppio giocatore. Per un diagramma di interazione tra le \emph{activity} citate, si veda figura \ref{fig:activities}.
+
+\includefigure{activities}{Diagramma delle Actvity}
+
+I dati sono costituiti da un file \emph{txt} inserito nella cartella degli assets, che contiene su ogni riga l'informazione per una determinata parola. I dati sono composti da una stringa che contiene la parola in italiano, due stringhe, una per ciascuna sillaba, e una stringa che costituisce la traduzione in inglese della parola stessa. Il file viene letto una volta in fase di inizializzazione della partita. Altri dati sono costititi dalle immagini associate alle parole e dalle immagini relative a bottoni e agli altri elementi grafici, contenute nelle cartelle \emph{drawable}.
+
+Per gestire il dato ``parola''abbiamo creato il tipo di dato \code{Word} di cui fanno parte una stringa per il nome, due istanze del tipo di dato \code{Syllable} e una stringa per la traduzione della parola in inglese (si veda figura \ref{fig:word}). La risorsa grafica associata alla parola è identificata dalla stringa della parola che rappresenta.
+
+\includefigure{word}{Class diagram: Word e Syllable}
+
+La partita è regolata dalla \code{MatchActivity} che al momento della inizializzazione recupera le informazioni sulla partita dalle \emph{preferences} (numero di turni e numero di parole per turno), controlla la modalità di gioco (singola o sfida) e instanzia il \code{MatchManager}. Il \code{MatchManager} gestisce la logica della partita, inizializza il gioco e ne modifica lo stato in base all'input dell'utente. Il compito del \code{MatchManager} in fase di inizializzazione è quello di instanziare il \code{WordManager} che a sua volta instanzia un \code{WordReader} per creare le parole e divide le parole nei diversi turni. La \code{MatchActivity} possiede inoltre due fragment che controllano lo stato dei due settori di cui è composta l'interfaccia grafica. Un fragment è chiamato \code{ResultFragment} e contiene le informazioni riguardanti le parole indovinate, l'altro è invece il \code{PlaygroundFragment} che gestisce la griglia in cui sono inserite le tessere. Dato che il \code{MatchManager} contiene le informazioni sullo stato della partita avrà un elenco per le parole presenti sulla schermata, uno per le sillabe nel fragment \code{PlaygroundFragment} e uno per i risultati nel \code{ResultFragment}. La \code{MatchActivity} implementa l'interfaccia \code{ResultCallback}, che permette di osservare le scelte dell'utente nel \code{PlaygroundFragment} e modificare di conseguenza il \code{ResultFragment}.
+
+Per un \textit{Class Diagram} delle classi appena citate, si veda figura \ref{fig:architectureGiocoso}.
+
+\includefigure{architectureGiocoso}{Class Diagram: Classi per la gestione dello stato della partita}
+
+\subsection{Partita singola}
+Per inzializzare la partita singola il giocatore seleziona il bottone apposito nella \code{MainActivity}. In questo modo viene chiamato il metodo \code{startSingleMatch} che rimanda alla \code{MatchActivity}.
+
+Nel caso di partita singola l'inizializzazione prevede che le parole vengano lette dal file di testo e raccolte dal \code{WordReader}. Il \code{WordManager} seleziona un sottoinsieme casuale delle parole del \code{WordReader} definito in base alle informazioni delle impostazioni (il numero di parole sarà pari al prodotto fra numero di turni e numero di parole per turno). Le parole sono poi raccolte in tanti sottoinsiemi quanti sono i turni (si veda figura \ref{fig:initSingle}).
+
+\includefigure{initSingle}{Sequence Diagram: inizializzazione della partita gioco singolo}
+
+Una volta inizializzata la partita sullo schermo del giocatore appare una schermata con due sezioni, ognuna gestita da un apposito fragment. Le tessere sono inserite in una \code{GridView}, a cui è associato un \code{GridAdapter}. Il \code{PlaygroundFragment} viene aggiornato ogni volta che l'utente seleziona una delle tessere, e la tessera selezionata viene comunicata al \code{MatchManager} che in base a questa informazione aggiorna lo stato del gioco.
+
+Il \code{MatchManager} in base alla tessera selezionata, ovvero alla sillaba, può avere diversi comportamenti. Se la sillaba selezionata non completa nessuna parola ma è la prima prima sillaba valida ad essere selezionata, viene aggiornata l'ultima parola valida, se la sillaba selezionata coincide con la seconda sillaba dell'ultima parola valida viene aggiornato l'elenco dei risultati e viene notificato il \code{ResultFragment}, se la sillaba non è valida, ovvero è la prima ad essere selezionata ma non è la prima di una parola, o ancora non completa l'ultima parola valida, il \code{MatchManager} non aggiorna nulla. Abbiamo scelto, in questo caso, di non aggiornare l'ultima parola valida se il giocatore seleziona una nuova prima sillaba dopo la prima sillaba valida registrata. In questo modo al giocatore sarà chiaro che per passare al completamento di una nuova parola è necessario completare la parola precedentemente iniziata (\textit{Sequence Diagram} in figura \ref{fig:onsyllselected}).
+
+\includefigure{onsyllselected}{Sequence Diagram: selezione della prima sillaba di una parola, in questo caso non verrà eseguita la parte nel riquadro opzionale dal momento che stiamo considerando la modalità di gioco singolo giocatore}
+
+\includefigure{onsyllselected1}{Sequence Diagram: completamento di una parola}
+
+Quando l'utente seleziona una tessera che completa la parola valida, il \code{PlaygroundFragment} lo notifica al \code{ResultFragment} che aggiorna il contenuto della \code{ListView}. Se le parole sono tutte complete la \code{MatchActivity} rende visibile e cliccabile il tasto next per passare al turno successivo, ovvero recuperare le parole del turno successivo e aggiornare il contenuto della \code{GridView}. Se le non ci sono più nuovi turni, ovvero il \code{WordManager} restituisce un turno vuoto, la partita si considera conclusa, l'utente visualizza un messaggio conclusivo e torna alla schermata iniziale (\textit{Sequence Diagram in figura \ref{fig:onsyllselected1}}).
+
+\subsection{Partita multipla}
+Per l'inizializzazione della partita multipla occorre mettere in comunicazione i dispositivi dei due giocatori tramite connessione Bluetooth. Questa operazione viene messa in atto facendo partire la connessione dalla \code{ConnectionSetupActivity}. Più precisamente nel metodo \code{onCreate} della \code{ConnectionSetupActivity} l'operazione che viene eseguita è quella di rendersi visibili, o \emph{discoverable}, per eventuali nuove connessioni con nuovi giocatori. La connessione tramite Bluetooth avviene in modalità Master-Slave, cioè entrambi i dispositivi si mettono in ascolto di nuove connessioni ma uno dei due, in particolare quello che seleziona il tasto apposito nella schermata, si connette all'altro e inizializza la partita.
+
+Il giocatore che instaura la connessione esegue gli stessi passi del caso partita in modalità singola, ma in più invia le parole all'altro giocatore in formato testuale. Il secondo giocatore, in qualità di slave, inizializza la partita solo quando riceve un messaggio dal master contenente tutte le parole. Nella pratica il gioco lato slave viene inizializzato come se le parole venissero lette dal file \emph{txt}, ma vengono lette dal messaggio ricevuto dal master invece che da un file di configurazione. Il master inoltre invia allo slave anche il numero di turni e il numero di parole per turno. Le parole vengono inviate esattamente come vengono lette dal file di testo, con la differenza che il separatore per le linee nel messaggio viene tradotto nel carattere ``-'' (\textit{Sequence Diagram} in figura \ref{fig:initMaster}).
+
+\includefigure{initMaster}{Sequence Diagram: inizializzazione giocatore master}
+
+Il gioco è alternato quindi ogni giocatore sceglie durante il proprio turno una sillaba. A cominciare è sempre il giocatore invitato, cioè lo slave. Quando il primo giocatore sceglie una sillaba valida, all'altro giocatore verrà inviato un messaggio con la stringa della parola selezionata. Il secondo giocatore sceglie la seconda sillaba e, se questa è corretta, la stringa viene rimandata al primo giocatore. Questo verifica che la stringa ricevuta corrisponda all'ultima inviata e aggiorna sia il contenuto della \code{GridView} che quello della \code{ListView}.
+
+La comunicazione fra master e slave è codificata in tre diversi tipi di messaggio, ad eccezione del primo contenente le parole dell'intera partita che viene inviato unicamente dal master allo slave:
+
+\begin{enumerate}
+\item messaggio \code{next}: indica che le parole del turno sono state tutte completate e il giocatore ha selezionato il tasto che porta al turno successivo;
+\item messaggio \code{end}: indica che le parole della partita sono state completate e uno dei due giocatori ha selezionato il tasto che porta alla schermata successiva;
+\item messaggio \code{parola-valida}: contiene la parola che il giocatore ha iniziato o completato e viene trattato, come visto, a seconda dello stato del gioco. Quando il gioco viene concluso appare sulla schermata un avviso che rimanda i giocatori alla schermata iniziale.
+\end{enumerate}

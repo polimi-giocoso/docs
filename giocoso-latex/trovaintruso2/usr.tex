@@ -1,0 +1,51 @@
+\subsection{Primo avvio}
+Al primo avvio del gioco viene richiesto di effettuare il setup con i parametri necessari a giocare. Specificare quindi gli indirizzi email per l'invio e la ricezione dei report di gioco, assieme ai parametri di gioco. Premere “Salva impostazioni” per tornare alla schermata iniziale (si veda figura \ref{fig:intruso2_settings}). Fino a quando non vengono salvate le impostazioni non è possibile cominciare a giocare.
+
+\screenshot{intruso2_settings}{La schermata di impostazioni}
+
+\subsection{Impostazioni di gioco}
+Per accedere alle impostazioni di gioco toccare l'icona grigia in alto a sinistra nella schermata iniziale (figura \ref{fig:intruso2_main}).
+
+\screenshot{intruso2_main}{La schermata principale}
+
+\subsubsection{Impostazioni e-mail}
+Per l'invio della mail è necessario un account Gmail. Nel caso in cui si dovessero riscontrare problemi con l'invio della mail è necessario abilitare l'accesso ad app meno sicure andando qui: \url{https://www.google.com/settings/security/lesssecureapps}
+I messaggi inviati dall'app saranno disponibili nella cartella Posta Inviata dell'account Gmail utilizzato.
+La mail viene inviata solo se il selettore “Invio mail al termine della sessione di gioco” è posizionato su ON, se è attiva la connessione a Internet e solo se sono state visualizzate tutte le schermate (anche saltandole nel corso del gioco).
+La mail viene inviata dopo la comparsa della finestra “Partita terminata”, premendo sul pulsante di uscita.
+Nel caso in cui i dati di accesso a Gmail fossero errati, o non fosse presente una connessione a Internet attiva al termine della partita, viene mostrato un messaggio di errore. La mail in questo caso non viene persa, ma salvata in una coda di invio. Le mail da spedire vengono inviate al termine della prima partita in cui la connessione a Internet è attiva e se i dati di accesso a Gmail sono corretti.
+
+\subsubsection{Impostazioni modalità con oggetti in movimento}
+In questa modalità il bambino deve individuare gli oggetti intrusi nascosti in un gruppo di oggetti in movimento (figura \ref{fig:intruso2_game_dinamic}).
+
+\screenshot{intruso2_game_dinamic}{La modalità di gioco con oggetti in movimento}
+
+Occorre specificare:
+
+\begin{itemize}
+\item Email di destinazione dati (può essere anche un indirizzo email non Gmail)
+\item Criterio di gioco (forma/colore/percettivo)
+\item Numero di schermate da giocare
+\item Numero totale di oggetti sullo schermo (non più di 50, inclusi gli intrusi)
+\item Numero di intrusi nel gruppo di oggetti (in numero inferiore al totale degli oggetti)
+\item Tempo massimo di gioco per schermata (in secondi)
+\end{itemize}
+
+\subsubsection{Impostazioni modalità con oggetti fissi nello spazio}
+In questa modalità il bambino deve individuare gli oggetti intrusi nascosti in una griglia di oggetti. Gli intrusi appaiono e scompaiono nel corso della partita, occorre toccarli prima che scompaiano (figura \ref{fig:intruso2_game_static}).
+
+\screenshot{intruso2_game_static}{La modalità di gioco con oggetti fissi}
+
+Occorre specificare:
+
+\begin{itemize}
+\item Email di destinazione dati (può essere anche un indirizzo email non Gmail)
+\item Criterio di gioco (forma/colore/percettivo)
+\item Numero di schermate da giocare
+\item Numero di righe (non più di 6)
+\item Numero di colonne (non più di 10)
+\item Numero di intrusi (in numero inferiore al totale degli oggetti)
+\item Tempo massimo di gioco per schermata (in secondi)
+\item Tempo di attesa prima che compaia l'intruso (in secondi)
+\item Tempo di esposizione dell'intruso sullo schermo (in secondi)
+\end{itemize}
